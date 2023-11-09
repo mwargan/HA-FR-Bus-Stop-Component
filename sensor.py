@@ -129,6 +129,8 @@ class BusLineSensor(SensorEntity):
         self.line_code = line_code
         self.line_direction_code = line_direction_code
         self._attr_name = self.get_pretty_name()
+        # Add a unique ID for the sensor
+        self._attr_unique_id = f"{stop_id}_{line_code}_{line_direction_code}"
 
     def get_pretty_name(self):
         """Return a pretty name for the sensor. It should be like: Line {} to {}"""
